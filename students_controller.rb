@@ -1,11 +1,11 @@
-require_relative "../view"
-require_relative "../student"
+require_relative "view"
+require_relative "student"
 
 class StudentsController
 
   def initialize(student_repository)
     @student_repository = student_repository
-    @students_view = View.new
+    @view = View.new
   end
 
   def new_email
