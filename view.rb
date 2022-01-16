@@ -7,7 +7,6 @@ class View
   end
 
   def display(student)
-    if student.status == "Ativo"
       first_name = student.name.split.first.capitalize
       last_name = student.name.split.last
       student_phone = student.phone
@@ -31,9 +30,10 @@ class View
 
       puts "A criação de seu e-mail (#{email_suggestions[user_option]}) será feita nos próximos minutos."
       puts "Um SMS foi enviado para #{student_phone} com a sua senha de acesso."
-    else
-      puts "Matrícula inativa ou número inexistente"
-    end
+  end
+
+  def display_not_found
+    puts "Matrícula inativa ou inexistente"
   end
 
 end
