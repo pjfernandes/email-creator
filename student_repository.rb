@@ -28,4 +28,3 @@ class StudentRepository
   end
 
 end
-a = StudentRepository.new("students.csv")
