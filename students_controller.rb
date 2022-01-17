@@ -11,10 +11,15 @@ class StudentsController
   def new_email
     student_number = @view.ask_for_student_number
     student = @student_repository.find(student_number)
-    if student.nil? == false && student.status == "Ativo"
-      @view.display(student)
-    elsif student.nil?
+    if student.nil?
       @view.display_not_found
+
+    elsif student.nil? == false && student.status == "Ativo"
+      if student.uffmail.nil?
+        @view.display(student)
+      else
+        @view.display_user_already_has_iduff
+      end
     end
   end
 

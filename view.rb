@@ -36,6 +36,10 @@ class View
     puts "Matrícula inativa ou inexistente"
   end
 
+  def display_user_already_has_iduff
+    puts "O aluno já possui um UFFMail"
+  end
+
   def ask_user_for(stuff)
     puts "#{stuff.capitalize}?"
     print ">"
