@@ -25,11 +25,13 @@ class View
       end
 
       puts " "
-      puts "Digite abaixo sua escolha: "
+      puts "Digite abaixo sua escolha:"
       user_option = gets.chomp.to_i - 1
 
       puts "A criação de seu e-mail (#{email_suggestions[user_option]}) será feita nos próximos minutos."
       puts "Um SMS foi enviado para #{student_phone} com a sua senha de acesso."
+
+      return email_suggestions[user_option]
   end
 
   def display_not_found
@@ -42,7 +44,7 @@ class View
 
   def ask_user_for(stuff)
     puts "#{stuff.capitalize}?"
-    print ">"
+    print "> "
     gets.chomp
   end
 

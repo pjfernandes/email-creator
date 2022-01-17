@@ -1,7 +1,6 @@
 class Student
 
-  attr_accessor :id, :status
-  attr_reader :name, :number, :phone, :email, :uffmail, :status
+  attr_accessor :name, :number, :phone, :email, :uffmail, :status
 
   def initialize(attributes = {})
     @name = attributes[:name]

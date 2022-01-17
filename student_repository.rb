@@ -14,10 +14,6 @@ class StudentRepository
     save_csv
   end
 
-  def all
-    @students
-  end
-
   def find(number)
     @students.find { |student| number == student.number.to_i }
   end
@@ -32,6 +28,7 @@ class StudentRepository
     end
   end
 
+  public
   def save_csv
     CSV.open(@csv_file_path, 'wb') do |csv|
       csv << ['nome', 'matricula', 'telefone', 'email', 'uffmail', 'status']

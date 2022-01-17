@@ -15,8 +15,9 @@ class StudentsController
       @view.display_not_found
 
     elsif student.nil? == false && student.status == "Ativo"
-      if student.uffmail.nil?
-        @view.display(student)
+      if student.uffmail.nil? || student.uffmail.size < 1
+        student.uffmail = @view.display(student)
+        @student_repository.save_csv
       else
         @view.display_user_already_has_iduff
       end
@@ -24,12 +25,12 @@ class StudentsController
   end
 
   def add_student
-    student_name = @view.ask_user_for(:name)
-    student_number = @view.ask_user_for(:number).to_i
-    student_phone = @view.ask_user_for(:phone)
-    student_email = @view.ask_user_for(:email)
-    student_uffmail = @view.ask_user_for(:uffmail)
-    student_status = @view.ask_user_for(:status).capitalize
+    student_name = @view.ask_user_for("nome")
+    student_number = @view.ask_user_for("matrícula").to_i
+    student_phone = @view.ask_user_for("telefone")
+    student_email = @view.ask_user_for("email")
+    student_uffmail = @view.ask_user_for("uffmail")
+    student_status = @view.ask_user_for("status").capitalize
     student = Student.new(
       name: student_name,
       number: student_number,
