@@ -36,7 +36,7 @@ class StudentsController
       phone: student_phone,
       email: student_email,
       uffmail: student_uffmail,
-      status: student_status,
+      status: student_status
     )
     @student_repository.create(student)
   end
