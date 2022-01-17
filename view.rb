@@ -36,4 +36,10 @@ class View
     puts "Matrícula inativa ou inexistente"
   end
 
+  def ask_user_for(stuff)
+    puts "#{stuff.capitalize}?"
+    print ">"
+    gets.chomp
+  end
+
 end

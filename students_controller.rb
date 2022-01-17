@@ -18,4 +18,22 @@ class StudentsController
     end
   end
 
+  def add_student
+    student_name = @view.ask_user_for(:name)
+    student_number = @view.ask_user_for(:number).to_i
+    student_phone = @view.ask_user_for(:phone)
+    student_email = @view.ask_user_for(:email)
+    student_uffmail = @view.ask_user_for(:uffmail)
+    student_status = @view.ask_user_for(:status).capitalize
+    student = Student.new(
+      name: student_name,
+      number: student_number,
+      phone: student_phone,
+      email: student_email,
+      uffmail: student_uffmail,
+      status: student_status,
+    )
+    @student_repository.create(student)
+  end
+
 end

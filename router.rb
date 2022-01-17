@@ -22,9 +22,10 @@ class Router
   def route_action(action)
     case action
     when 1 then @controller.new_email
-    when 2 then stop
+    when 2 then @controller.add_student
+    when 3 then stop
     else
-      puts "Digite 1 ou 2"
+      puts "Digite 1, 2 ou 3"
     end
   end
 
@@ -36,7 +37,8 @@ class Router
     puts ""
     puts "Escolha uma opção"
     puts "1 - Criar novo uffmail"
-    puts "2 - Sair do programa"
+    puts "2 - Cadastrar novo estudante"
+    puts "3 - Sair do programa"
   end
 
 end
